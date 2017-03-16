@@ -164,7 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         // Adding Doctrine provider
         LaravelDoctrine\ORM\DoctrineServiceProvider::class,
-
+        LaravelDoctrine\Migrations\MigrationsServiceProvider::class,
         /*
          * Package Service Providers...
          */
