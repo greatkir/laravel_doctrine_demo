@@ -4,6 +4,10 @@ namespace App;
 
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Locations")
+ */
 class Location
 {
     /**
@@ -21,7 +25,7 @@ class Location
     /**
      *
      * @ORM\Column(type="datetime")
-     * @ORM\T
+     * 
      */
     private $created_on;
 

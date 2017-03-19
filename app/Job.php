@@ -33,16 +33,16 @@ class Job
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Location", inversedBy="id")
-     * @var Location
+     * @ORM\ManyToOne(targetEntity="Location")
+     * 
      */
-    private $location_id;
+    private $location;
 
     /**
      * @ORM\ManyToOne(targetEntity="Brand")
-     * @var Brand
+     * 
      */
-    private $brand_id;
+    private $brand;
 
     /**
      *
@@ -65,7 +65,7 @@ class Job
         return $this->name;
     }
 
-    public function getContact_email()
+    public function getEmail()
     {
         return $this->contact_email;
     }
@@ -75,17 +75,17 @@ class Job
         return $this->description;
     }
 
-    public function getLocation_id(): Location
+    public function getLocation(): Location
     {
-        return $this->location_id;
+        return $this->location;
     }
 
-    public function getBrand_id(): Brand
+    public function getBrand(): Brand
     {
-        return $this->brand_id;
+        return $this->brand;
     }
 
-    public function setContact_email($contact_email)
+    public function setEmail($contact_email)
     {
         $this->contact_email = $contact_email;
     }
@@ -95,17 +95,17 @@ class Job
         $this->description = $description;
     }
 
-    public function setLocation_id(Location $location_id)
+    public function setLocation(Location $location_id)
     {
         $this->location_id = $location_id;
     }
 
-    public function setBrand_id(Brand $brand_id)
+    public function setBrand(Brand $brand_id)
     {
         $this->brand_id = $brand_id;
     }
 
-    public function getCreated_on()
+    public function getCreatedTime()
     {
         return $this->created_on;
     }

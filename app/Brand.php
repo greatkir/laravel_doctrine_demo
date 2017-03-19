@@ -4,6 +4,10 @@ namespace App;
 
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Brands")
+ */
 class Brand 
 {
     /**
