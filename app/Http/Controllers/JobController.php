@@ -46,8 +46,8 @@ class JobController extends Controller
                 'name' => $job->getName(),
                 'email' => $job->getEmail(),
                 'description' => $job->getDescription(),
-                'location' => $job->getLocation(),
-                'brand' => $job->getBrand(),
+                'location' => $job->getLocation()->getName(),
+                'brand' => $job->getBrand()->getName(),
                 'created_time' => $job->getCreatedTime(),
             ];
         } catch (Exception $e) {

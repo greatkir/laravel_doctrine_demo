@@ -43,8 +43,14 @@ class Location
         return $this->name;
     }
 
-    public function getCreated_on()
+    public function getCreatedTime()
     {
         return $this->created_on;
     }
+    public function setCreatedTime($created_on)
+    {
+        $this->created_on = $created_on;
+    }
+
+
 }

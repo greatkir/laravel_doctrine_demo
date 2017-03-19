@@ -110,6 +110,11 @@ class Job
         return $this->created_on;
     }
 
+    public function setCreatedTime($created_on)
+    {
+        $this->created_on = $created_on;
+    }
+
 
 
 }
