@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Job;
 use Illuminate\Http\Request;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\Common\Collections\Criteria;
 
 class JobController extends Controller
 {
@@ -23,7 +22,7 @@ class JobController extends Controller
      * @param int $offset
      * @return \Illuminate\Http\Response
      */
-    public function index($limit, $offset)
+    public function index($limit = 5, $offset = 0)
     {
         try {
             $response = [];

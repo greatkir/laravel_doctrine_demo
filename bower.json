@@ -1,0 +1,13 @@
+{
+  "name": "Laravel-Doctrine-demo",
+  "version": "1.0.0",
+  "directory": "resources/assets/bower",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.0",
+    "bootstrap": "^3.3.7"
+  }
+}

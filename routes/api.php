@@ -14,4 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::resource('jobentry', 'JobController', array('only' => array('show')));
-Route::resource('joblist.limit.offset', 'JobController', array('only' => array('index')));
+Route::resource('joblist', 'JobController', array('only' => array('index')));
