@@ -13,5 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('jobentry', 'JobController', array('only' => array('show')));
-Route::resource('joblist', 'JobController', array('only' => array('index')));
+Route::get('jobcount', 'JobController@count');
+Route::resource('job', 'JobController', array('only' => array('index', 'show')));
+Route::resource('job/offset/{id}', 'JobController', array('only' => array('index')));
+
+Route::resource('brandlist', 'BrandController', array('only' => array('index')));
+Route::resource('locationlist', 'LocationController', array('only' => array('index')));

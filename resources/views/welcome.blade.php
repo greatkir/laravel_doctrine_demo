@@ -29,20 +29,26 @@
         <form id="job-main-form" method="get" action="#" >
           <div class="controls">
             <div class="row">
-              <div class="col-sm-5 col-sm-offset-1 col-lg-4 col-lg-offset-2">
+              <div class="col-sm-4 col-sm-offset-1 col-lg-3 col-lg-offset-2">
                 <div class="form-group">
                   <label for="profession">Profession</label>
-                  <input type="text" id="profession" name="profession" placeholder="Profession you are looking for" class="form-control">
+                  <input type="text" id="profession" name="name" placeholder="Profession you are looking for" class="form-control">
                 </div>
               </div>
-              <div class="col-sm-5 col-lg-4">
+              <div class="col-sm-3 col-lg-2">
                 <div class="form-group">
                   <label for="location">Location</label>
-                  <input type="text" id="location" name="location" placeholder="Any particular location?" value="Bay Area" class="form-control">
+                  <select id="location_sel" class="form-control"><option id=""></option></select>
+                </div>
+              </div>
+                <div class="col-sm-3 col-lg-2">
+                <div class="form-group">
+                  <label for="location">Category</label>
+                  <select id="brand_sel" class="form-control"><option id=""></option></select>
                 </div>
               </div>
               <div class="col-sm-1">
-                <button type="submit" name="name" class="btn btn-primary job-main-form__button"><i class="fa fa-search"></i></button>
+                <button type="submit" name="name" style="position: relative;top: 25px;" class="btn btn-primary">Search</button>
               </div>
             </div>
           </div>
@@ -51,7 +57,7 @@
     
     <section>
       <div class="container">
-        <h3 class="heading">We have found 40 jobs</h3>
+        <!--<h3 class="heading">We have found 40 jobs</h3>-->
         <div class="alert alert-danger" style="display: none;" role="alert">Some error happened.Please, try again.</div>
            
         <div id="joblist">
@@ -60,12 +66,10 @@
        
         <div class="pages col-md-offset-2">
           <ul class="pagination">
-            <li><a href="#">&laquo;</a></li>
-            <li class="active"> <a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">&raquo;</a></li>
+            
+            
+            
+            
           </ul>
         </div>
       </div>

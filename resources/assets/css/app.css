@@ -6721,4 +6721,8 @@ button.close {
     display: none !important;
   }
 }
+.controls button {
+  position: relative;
+  top: 20px;
+}
 /*# sourceMappingURL=app.css.map */
