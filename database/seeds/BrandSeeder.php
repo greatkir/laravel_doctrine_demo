@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+
 /**
  *
  *
@@ -8,6 +9,7 @@ use Illuminate\Database\Seeder;
  */
 class BrandSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -18,10 +20,10 @@ class BrandSeeder extends Seeder
         $records = ['Google', 'Facebook', 'Badoo', 'Apple'];
         foreach ($records as $single_record) {
             DB::table('Brands')->insert([
-                'name' => $single_record,
+                'name'       => $single_record,
                 'created_on' => new DateTime,
-
             ]);
         }
     }
+
 }

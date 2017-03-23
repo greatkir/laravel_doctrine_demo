@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Job
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -27,6 +28,7 @@ class Job
      * @ORM\Column(type="string");
      */
     private $contact_email;
+
     /**
      * @ORM\Column(type="text")
      */
@@ -34,13 +36,13 @@ class Job
 
     /**
      * @ORM\ManyToOne(targetEntity="Location")
-     * 
+     *
      */
     private $location;
 
     /**
      * @ORM\ManyToOne(targetEntity="Brand")
-     * 
+     *
      */
     private $brand;
 
@@ -114,7 +116,4 @@ class Job
     {
         $this->created_on = $created_on;
     }
-
-
-
 }

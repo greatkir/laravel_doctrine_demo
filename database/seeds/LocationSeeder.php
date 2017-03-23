@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+
 /**
  *
  *
@@ -8,6 +9,7 @@ use Illuminate\Database\Seeder;
  */
 class LocationSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -19,10 +21,10 @@ class LocationSeeder extends Seeder
         $records = ['Chisinau', 'London', 'Paris', 'Madrid'];
         foreach ($records as $single_record) {
             DB::table('Locations')->insert([
-                'name' => $single_record,
+                'name'       => $single_record,
                 'created_on' => new DateTime,
-
             ]);
         }
     }
+
 }
