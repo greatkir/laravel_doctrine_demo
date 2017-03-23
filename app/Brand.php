@@ -8,8 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="Brands")
  */
-class Brand 
+class Brand
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -32,6 +33,7 @@ class Brand
     {
         $this->name = $name;
     }
+
     public function getId()
     {
         return $this->id;
@@ -46,11 +48,9 @@ class Brand
     {
         return $this->created_on;
     }
+
     public function setCreatedTime($created_on)
     {
         $this->created_on = $created_on;
     }
-
-
-
 }

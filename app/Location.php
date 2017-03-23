@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Location
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -25,7 +26,7 @@ class Location
     /**
      *
      * @ORM\Column(type="datetime")
-     * 
+     *
      */
     private $created_on;
 
@@ -33,6 +34,7 @@ class Location
     {
         $this->name = $name;
     }
+
     public function getId()
     {
         return $this->id;
@@ -47,10 +49,9 @@ class Location
     {
         return $this->created_on;
     }
+
     public function setCreatedTime($created_on)
     {
         $this->created_on = $created_on;
     }
-
-
 }

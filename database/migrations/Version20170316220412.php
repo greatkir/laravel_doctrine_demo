@@ -9,12 +9,14 @@ use LaravelDoctrine\Migrations\Schema\Builder;
 
 class Version20170316220412 extends AbstractMigration
 {
+
     /**
      * @param Schema $schema
      */
     public function up(Schema $schema)
     {
-        (new Builder($schema))->create('Brands', function (Table $table) {
+        (new Builder($schema))->create('Brands',
+                                       function (Table $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamp('created_on');
@@ -28,4 +30,5 @@ class Version20170316220412 extends AbstractMigration
     {
         (new Builder($schema))->drop('Brands');
     }
+
 }

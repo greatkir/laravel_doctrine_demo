@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Doctrine\ORM\EntityManagerInterface;
 
 class LocationController extends Controller
 {
-    const SUCCESSCODE = 200;
-    const ERRORCODE = 404;
+    const SUCCESS_CODE = 200;
+    const ERROR_CODE   = 404;
 
-
+    /**
+     * Create new controller and entity manager by depedency injection
+     *
+     * @param Doctrine\ORM\EntityManagerInterface $em
+     * @return void
+     */
     public function __construct(EntityManagerInterface $em)
     {
         $this->em = $em;
@@ -24,24 +28,23 @@ class LocationController extends Controller
     public function index()
     {
         try {
-            $response = [];
-            $status_code = self::SUCCESSCODE;
-            $locations = $this->em->getRepository('App\Location')->findAll();
+            $response    = [];
+            $status_code = self::SUCCESS_CODE;
+            $locations   = $this->em->getRepository('App\Location')->findAll();
             foreach ($locations as $location_single) {
                 $response[] = [
-                    'id' => $location_single->getId(),
-                    'name' => $location_single->getName(),
+                    'id'          => $location_single->getId(),
+                    'name'        => $location_single->getName(),
                     'createdTime' => $location_single->getCreatedTime(),
                 ];
             }
         } catch (Exception $e) {
-            $status_code = self::ERRORCODE;
+            $status_code = self::ERROR_CODE;
         } finally {
             return [
                 'locationList' => $response,
-                'statusCode' => $status_code
+                'statusCode'   => $status_code
             ];
         }
     }
-
 }
