@@ -74,7 +74,8 @@ class JobController extends Controller
     }
 
     /**
-     * 
+     * Build navigation links for API
+     *
      * @param array $criteria
      * @param int $limit
      * @param int|null $offset
@@ -85,15 +86,18 @@ class JobController extends Controller
         $links = [];
         $api_url = 'api/job/offset/';
         $prev  = $offset - $limit;
-        //yes, second never will be false, but it is important control point
+        /**
+         * Control check if we need previous page link
+         */
         if (($offset > 0) && ($prev >= 0)) {
             $links['prev'] = $api_url . $prev . '?';
             foreach ($criteria as $key => $value) {
                 $links['prev'] .= $key . '=' . $value . "&";
             }
         }
-
-        //think most easy way to do it through ORM
+        /**
+         * Get next page to control if there are entities. think most easy way to do it without query builder
+         */
         $job_list = $this->em->getRepository('App\Job')->findBy($criteria,
                                                                 ['created_on' => self::DEFAULT_SORT],
                                                                 $limit,
@@ -108,7 +112,8 @@ class JobController extends Controller
     }
 
     /**
-     * 
+     * Construct a search criteria for Doctrine ORM based on request
+     *
      * @param Illuminate\Http\Request $request
      * @return array
      */
